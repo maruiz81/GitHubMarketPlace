@@ -1,0 +1,75 @@
+buildscript {
+    file("dependencies.properties").withReader {
+        Properties properties = new Properties()
+        properties.load(it)
+        project.ext.props = properties
+    }
+
+    // buildscript closure is evaluated first, so we cannot use version variables here
+    ext {
+        benNamesPluginVersion = props.getProperty('benNamesPluginVersion')
+        buildGradlePluginVersion = props.getProperty('buildGradlePluginVersion')
+        googleServicesVersion = props.getProperty('googleServicesVersion')
+        kotlinVersion = props.getProperty('kotlinVersion')
+
+        compileSdkVersion = props.getProperty('compileSdkVersion').toInteger()
+        targetSdkVersion = props.getProperty('targetSdkVersion').toInteger()
+        buildToolsVersion = props.getProperty('buildToolsVersion')
+        minSdkVersion = props.getProperty('minSdkVersion').toInteger()
+
+        versionCode = props.getProperty('versionCode').toInteger()
+        versionName = props.getProperty('versionName')
+
+        fabricPluginVersion = props.getProperty('fabricPluginVersion')
+
+        projectDependencies = [
+
+                supportAppCompat      :
+                        "com.android.support:appcompat-v7:" + props.getProperty('supportLibraryVersion'),
+                supportDesign         :
+                        "com.android.support:design:" + props.getProperty('supportLibraryVersion'),
+                supportCardView       :
+                        "com.android.support:cardview-v7:" + props.getProperty('supportLibraryVersion'),
+                supportRecyclerView   :
+                        "com.android.support:recyclerview-v7:" + props.getProperty('supportLibraryVersion'),
+                supportGridLayout     :
+                        "com.android.support:gridlayout-v7:" + props.getProperty('supportLibraryVersion'),
+                supportConstrainLayout:
+                        "com.android.support.constraint:constraint-layout:" + props.getProperty('supportConstraintVersion'),
+                supportAnnotations    :
+                        "com.android.support:support-annotations:" + props.getProperty('supportLibraryVersion'),
+                advRecyclerView       :
+                        "com.h6ah4i.android.widget.advrecyclerview:advrecyclerview:" + props.getProperty('advRecyclerViewVersion'),
+                anko                  :
+                        "org.jetbrains.anko:anko-common:" + props.getProperty('ankoVersion'),
+                dagger                :
+                        "com.google.dagger:dagger:" + props.getProperty('daggerVersion'),
+                daggerCompiler        :
+                        "com.google.dagger:dagger-compiler:" + props.getProperty('daggerVersion'),
+                glide                 :
+                        "com.github.bumptech.glide:glide:" + props.getProperty('glideVersion'),
+                gson                  :
+                        "com.google.code.gson:gson:" + props.getProperty('gsonVersion'),
+                kotlinStdLib          :
+                        "org.jetbrains.kotlin:kotlin-stdlib-jre7:" + props.getProperty('kotlinVersion'),
+                playServicesAuth      :
+                        "com.google.android.gms:play-services-auth:" + props.getProperty('googlePlayServicesVersion'),
+                playServicesMaps      :
+                        "com.google.android.gms:play-services-maps:" + props.getProperty('googlePlayServicesVersion'),
+                playServicesPlaces    :
+                        "com.google.android.gms:play-services-places:" + props.getProperty('googlePlayServicesVersion'),
+                recyclerViewRenderers :
+                        "me.alexrs:recyclerview-renderers:" + props.getProperty('recyclerViewRenderersVersion'),
+                retrofit              :
+                        "com.squareup.retrofit2:retrofit:" + props.getProperty('retrofitVersion'),
+                retrofitGson          :
+                        "com.squareup.retrofit2:converter-gson:" + props.getProperty('retrofitVersion'),
+                retrofitRx            :
+                        "com.jakewharton.retrofit:retrofit2-rxjava2-adapter:" + props.getProperty('retrofitRxAdapterVersion'),
+                rxAndroid             :
+                        "io.reactivex.rxjava2:rxandroid:" + props.getProperty('rxAndroidVersion'),
+                rxJava                :
+                        "io.reactivex.rxjava2:rxjava:" + props.getProperty('rxJavaVersion')
+        ]
+    }
+}

@@ -1,0 +1,47 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion 27
+    defaultConfig {
+        applicationId "maruiz.com.githubmarketplace"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation projectDependencies.supportAppCompat
+    implementation projectDependencies.supportConstrainLayout
+    implementation projectDependencies.supportDesign
+    //Dagger
+    implementation projectDependencies.dagger
+    kapt projectDependencies.daggerCompiler
+    //Rxjava
+    implementation projectDependencies.rxJava
+    implementation projectDependencies.rxAndroid
+    //Retrofit
+    implementation projectDependencies.retrofit
+    implementation projectDependencies.retrofitGson
+    implementation projectDependencies.retrofitRx
+    //Gson
+    implementation projectDependencies.gson
+    //glide
+    implementation projectDependencies.glide
+    //Kotlin
+    implementation projectDependencies.kotlinStdLib
+    implementation projectDependencies.anko
+}
