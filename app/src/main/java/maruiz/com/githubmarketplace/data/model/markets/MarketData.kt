@@ -1,4 +1,4 @@
-package maruiz.com.githubmarketplace.data.model
+package maruiz.com.githubmarketplace.data.model.markets
 
 class MarketData(val data: EdgesGroup = EdgesGroup())
 
