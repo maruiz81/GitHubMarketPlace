@@ -58,6 +58,8 @@ buildscript {
                         "com.google.android.gms:play-services-maps:" + props.getProperty('googlePlayServicesVersion'),
                 playServicesPlaces    :
                         "com.google.android.gms:play-services-places:" + props.getProperty('googlePlayServicesVersion'),
+                okHttpLoginInterceptor:
+                        "com.squareup.okhttp3:logging-interceptor:" + props.getProperty('okHttpVersion'),
                 recyclerViewRenderers :
                         "me.alexrs:recyclerview-renderers:" + props.getProperty('recyclerViewRenderersVersion'),
                 retrofit              :

@@ -1,9 +1,9 @@
 package maruiz.com.githubmarketplace.presentation.application
 
 import android.app.Application
-import maruiz.com.githubmarketplace.presentation.di.AppComponent
-import maruiz.com.githubmarketplace.presentation.di.DaggerAppComponent
-import maruiz.com.githubmarketplace.presentation.di.RetrofitModule
+import maruiz.com.githubmarketplace.presentation.di.components.AppComponent
+import maruiz.com.githubmarketplace.presentation.di.components.DaggerAppComponent
+import maruiz.com.githubmarketplace.presentation.di.modules.RetrofitModule
 
 class MarketPlaceApp : Application() {
 

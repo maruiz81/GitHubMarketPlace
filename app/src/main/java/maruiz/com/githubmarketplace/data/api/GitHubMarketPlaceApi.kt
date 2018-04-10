@@ -11,10 +11,10 @@ import retrofit2.http.POST
 
 interface GitHubMarketPlaceApi {
     @Headers("Authorization:Bearer $GITHUB_KEY")
-    @POST
+    @POST("graphql")
     fun getMarketPlace(@Body query: MarketPlaceQueryModel): Single<MarketData>
 
     @Headers("Authorization:Bearer $GITHUB_KEY")
-    @POST
+    @POST("graphql")
     fun getMarketCategories(@Body query: MarketCategoriesQueryModel): Single<MarketCategoriesModel>
 }

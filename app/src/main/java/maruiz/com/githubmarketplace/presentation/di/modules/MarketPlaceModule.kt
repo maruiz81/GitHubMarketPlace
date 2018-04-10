@@ -1,26 +1,26 @@
-package maruiz.com.githubmarketplace.presentation.di
+package maruiz.com.githubmarketplace.presentation.di.modules
 
 import dagger.Module
 import dagger.Provides
 import maruiz.com.githubmarketplace.data.api.GitHubMarketPlaceApi
 import maruiz.com.githubmarketplace.domain.interactor.GetMarkets
-import maruiz.com.githubmarketplace.presentation.di.scopes.PerActivity
-import maruiz.com.githubmarketplace.presentation.presenter.MainPresenter
+import maruiz.com.githubmarketplace.presentation.di.scopes.PerFragment
+import maruiz.com.githubmarketplace.presentation.presenter.marketlispresenter.MarketListPresenter
 import retrofit2.Retrofit
 
 @Module
 class MarketPlaceModule {
 
-    @PerActivity
+    @PerFragment
     @Provides
-    fun providePresenter(getMarkets: GetMarkets): MainPresenter = MainPresenter(getMarkets)
+    fun providePresenter(getMarkets: GetMarkets): MarketListPresenter = MarketListPresenter(getMarkets)
 
-    @PerActivity
+    @PerFragment
     @Provides
     fun provideInteractor(gitHubMarketPlaceApi: GitHubMarketPlaceApi): GetMarkets =
             GetMarkets(gitHubMarketPlaceApi)
 
-    @PerActivity
+    @PerFragment
     @Provides
     fun provideProductService(retrofit: Retrofit): GitHubMarketPlaceApi =
             retrofit.create(GitHubMarketPlaceApi::class.java)

@@ -1,7 +1,7 @@
 package maruiz.com.githubmarketplace.data.model.categories
 
-class MarketCategoriesModel(val data: MarketPlaceCategories)
+class MarketCategoriesModel(val data: MarketPlaceCategories = MarketPlaceCategories())
 
-class MarketPlaceCategories(val marketplaceCategories: List<Category>)
+class MarketPlaceCategories(val marketplaceCategories: List<CategoryModel> = emptyList())
 
-class Category(val name: String)
+class CategoryModel(val name: String = "")
