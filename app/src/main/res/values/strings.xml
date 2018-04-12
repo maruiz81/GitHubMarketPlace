@@ -4,4 +4,6 @@
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
     <string name="empty_category">Empty Category</string>
+    <string name="error_getting_market_list">Impossible to get the market list</string>
+    <string name="error_getting_categories">Impossible to get the categories</string>
 </resources>

@@ -6,6 +6,7 @@ import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import kotlinx.android.synthetic.main.market_list_fragment.*
 import maruiz.com.githubmarketplace.R
 import maruiz.com.githubmarketplace.presentation.application.MarketPlaceApp
@@ -69,6 +70,10 @@ class MarketListFragment : Fragment(), MarketListView {
                             ?: ""))
                     .build().inject(this)
         }
+    }
+
+    override fun showError() {
+        Toast.makeText(context, getString(R.string.error_getting_market_list), Toast.LENGTH_LONG).show()
     }
 
     companion object {

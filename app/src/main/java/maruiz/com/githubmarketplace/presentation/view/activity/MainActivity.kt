@@ -1,8 +1,8 @@
 package maruiz.com.githubmarketplace.presentation.view.activity
 
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.support.v7.app.AppCompatActivity
+import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 import maruiz.com.githubmarketplace.R
 import maruiz.com.githubmarketplace.presentation.application.MarketPlaceApp
@@ -38,6 +38,10 @@ class MainActivity : AppCompatActivity(), MainActivityView {
 
     override fun setCategories(categories: List<Category>) {
         pager.adapter = MarketFragmentCollectionAdapter(supportFragmentManager, categories)
+    }
+
+    override fun showError() {
+        Toast.makeText(this, getString(R.string.error_getting_categories), Toast.LENGTH_LONG).show()
     }
 
     private fun initInjection() {

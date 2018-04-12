@@ -25,13 +25,17 @@ class MarketListPresenter(private val getMarkets: GetMarkets,
         else nodes.map { MarketRow(it.name, it.shortDescription, it.logoUrl) })
     }
 
+    private fun showError() {
+        view?.showError()
+    }
+
     inner class MarketObserver : DisposableSingleObserver<List<Node>>() {
         override fun onSuccess(nodes: List<Node>) {
             painItemsInTheView(nodes)
         }
 
         override fun onError(e: Throwable) {
+            showError()
         }
-
     }
 }

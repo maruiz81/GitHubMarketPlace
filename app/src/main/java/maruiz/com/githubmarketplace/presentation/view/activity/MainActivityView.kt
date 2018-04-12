@@ -4,4 +4,5 @@ import maruiz.com.githubmarketplace.presentation.model.Category
 
 interface MainActivityView {
     fun setCategories(categories: List<Category>)
+    fun showError()
 }
