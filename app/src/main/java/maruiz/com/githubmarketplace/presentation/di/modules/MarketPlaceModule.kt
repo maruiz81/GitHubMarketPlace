@@ -9,11 +9,11 @@ import maruiz.com.githubmarketplace.presentation.presenter.marketlispresenter.Ma
 import retrofit2.Retrofit
 
 @Module
-class MarketPlaceModule {
+class MarketPlaceModule(private val categorySlug: String) {
 
     @PerFragment
     @Provides
-    fun providePresenter(getMarkets: GetMarkets): MarketListPresenter = MarketListPresenter(getMarkets)
+    fun providePresenter(getMarkets: GetMarkets): MarketListPresenter = MarketListPresenter(getMarkets, categorySlug)
 
     @PerFragment
     @Provides

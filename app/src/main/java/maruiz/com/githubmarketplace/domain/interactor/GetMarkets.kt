@@ -9,10 +9,10 @@ import maruiz.com.githubmarketplace.data.model.markets.Node
 class GetMarkets(private val marketPlaceApi: GitHubMarketPlaceApi) :
         UseCase<MarketData, List<Node>, GetMarkets.Params>() {
     override fun buildUseCaseObservable(params: Params): Single<MarketData> =
-            marketPlaceApi.getMarketPlace(MarketPlaceQueryModel())
+            marketPlaceApi.getMarketPlace(MarketPlaceQueryModel(params.categorySlug))
 
     override fun convertData(originalData: MarketData): List<Node> =
-            originalData.data.edges.map { it.node }
+            originalData.data.marketplaceListings.edges.map { it.node }
 
-    class Params
+    class Params(val categorySlug: String)
 }

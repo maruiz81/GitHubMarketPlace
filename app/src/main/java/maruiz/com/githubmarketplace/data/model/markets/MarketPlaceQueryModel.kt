@@ -1,24 +1,5 @@
 package maruiz.com.githubmarketplace.data.model.markets
 
-class MarketPlaceQueryModel {
-    val query: String
-        get() = "query {\n" +
-                " \tmarketplaceListings(first:100) {\n" +
-                "    pageInfo {\n" +
-                "      endCursor\n" +
-                "      hasNextPage\n" +
-                "      hasPreviousPage\n" +
-                "      startCursor\n" +
-                "    }\n" +
-                "    edges {\n" +
-                "      node {\n" +
-                "        id\n" +
-                "        name\n" +
-                "        logoUrl\n" +
-                "        documentationUrl\n" +
-                "        fullDescription\n" +
-                "      }\n" +
-                "    }\n" +
-                "  }\n" +
-                "}"
-}
+class MarketPlaceQueryModel(private val categorySlug: String,
+                            val query: String = "query {marketplaceListings(first:100, categorySlug: \"$categorySlug\") {" +
+                                    "edges {node {id name logoUrl shortDescription}}}}")

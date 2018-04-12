@@ -38,6 +38,8 @@ dependencies {
     implementation projectDependencies.rxAndroid
     //OkHttp
     implementation projectDependencies.okHttpLoginInterceptor
+    //recyclerViewRenderers
+    implementation projectDependencies.recyclerViewRenderers
     //Retrofit
     implementation projectDependencies.retrofit
     implementation projectDependencies.retrofitGson

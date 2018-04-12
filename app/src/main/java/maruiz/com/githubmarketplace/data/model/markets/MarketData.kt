@@ -1,6 +1,8 @@
 package maruiz.com.githubmarketplace.data.model.markets
 
-class MarketData(val data: EdgesGroup = EdgesGroup())
+class MarketData(val data: MarketplaceListingsModel = MarketplaceListingsModel())
+
+class MarketplaceListingsModel(val marketplaceListings: EdgesGroup = EdgesGroup())
 
 class EdgesGroup(val edges: List<Edges> = emptyList())
 

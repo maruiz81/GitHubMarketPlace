@@ -21,7 +21,7 @@ class MainPresenter(private val getCategories: GetCategories) : BasePresenter<Ma
     }
 
     private fun showCategories(categories: List<CategoryModel>) {
-        view?.setCategories(categories.map { Category(it.name) })
+        view?.setCategories(categories.map { Category(it.name, it.slug) })
     }
 
     companion object {

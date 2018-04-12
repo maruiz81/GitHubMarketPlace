@@ -38,8 +38,6 @@ buildscript {
                         "com.android.support.constraint:constraint-layout:" + props.getProperty('supportConstraintVersion'),
                 supportAnnotations    :
                         "com.android.support:support-annotations:" + props.getProperty('supportLibraryVersion'),
-                advRecyclerView       :
-                        "com.h6ah4i.android.widget.advrecyclerview:advrecyclerview:" + props.getProperty('advRecyclerViewVersion'),
                 anko                  :
                         "org.jetbrains.anko:anko-common:" + props.getProperty('ankoVersion'),
                 dagger                :

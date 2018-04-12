@@ -4,4 +4,4 @@ class MarketCategoriesModel(val data: MarketPlaceCategories = MarketPlaceCategor
 
 class MarketPlaceCategories(val marketplaceCategories: List<CategoryModel> = emptyList())
 
-class CategoryModel(val name: String = "")
+class CategoryModel(val name: String = "", val slug: String = "")
