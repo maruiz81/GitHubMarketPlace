@@ -51,4 +51,8 @@ dependencies {
     //Kotlin
     implementation projectDependencies.kotlinStdLib
     implementation projectDependencies.anko
+
+    //Tests
+    testCompile projectTestingDependencies.junit
+    testCompile projectTestingDependencies.mockitoKotlin
 }

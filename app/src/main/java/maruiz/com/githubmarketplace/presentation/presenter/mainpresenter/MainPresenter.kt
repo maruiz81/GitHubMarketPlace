@@ -1,6 +1,5 @@
 package maruiz.com.githubmarketplace.presentation.presenter.mainpresenter
 
-import android.util.Log
 import io.reactivex.observers.DisposableSingleObserver
 import maruiz.com.githubmarketplace.data.model.categories.CategoryModel
 import maruiz.com.githubmarketplace.domain.interactor.GetCategories
@@ -24,6 +23,10 @@ class MainPresenter(private val getCategories: GetCategories) : BasePresenter<Ma
         view?.setCategories(categories.map { Category(it.name, it.slug) })
     }
 
+    private fun showError() {
+        view?.showError()
+    }
+
     companion object {
         private const val TAG = "MainPresenter"
     }
@@ -34,7 +37,7 @@ class MainPresenter(private val getCategories: GetCategories) : BasePresenter<Ma
         }
 
         override fun onError(error: Throwable) {
-            Log.e(TAG, "Error getting categories", error)
+            showError()
         }
     }
 }

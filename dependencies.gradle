@@ -65,5 +65,13 @@ buildscript {
                 rxJava                :
                         "io.reactivex.rxjava2:rxjava:" + props.getProperty('rxJavaVersion')
         ]
+
+        projectTestingDependencies = [
+
+                junit        :
+                        "junit:junit:" + props.getProperty('junit'),
+                mockitoKotlin:
+                        "com.nhaarman:mockito-kotlin:" + props.getProperty('mockitoKotlin')
+        ]
     }
 }
