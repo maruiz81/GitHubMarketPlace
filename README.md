@@ -5,4 +5,4 @@ This app calls to the https://api.github.com/graphql API in order to get categor
 
 To be able to test it you should add a Github key in GitHubMarketPlaceApi class.
 
-![alt text](https://github.com/maruiz81/GitHubMarketPlace/blob/master/device-2018-04-13-235432.png)
+![alt text](./screenshots/device-2018-04-13-235432.png)
